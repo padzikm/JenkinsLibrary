@@ -1,3 +1,9 @@
+def cloneRepo(){
+    stage('clone repo'){
+        git branch: 'master', url: 'https://github.com/padzikm/shopper'
+    }
+}
+
 def test(projectName, testFilePath){
     def imageName = "${projectName}.test.${env.BUILD_ID}"
 
