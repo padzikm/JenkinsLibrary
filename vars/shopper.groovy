@@ -1,8 +1,8 @@
-def test(imageName, testFilePath){
+def test(projectName, testFilePath){
+    def imageName = "${projectName}.test.${env.BUILD_ID}"
+
     stage("build docker image"){
-        sh "pwd"
-        sh "ls"
-        sh "docker image build --target test -t ${imageName} ."
+        sh "cd ./${projectName} docker image build --target test -t ${imageName} ."
     }
     
     stage("run docker image"){
