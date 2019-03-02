@@ -1,1 +1,1 @@
-def funcja = {msg -> println msg}
+def funcja(msg){ println msg}
