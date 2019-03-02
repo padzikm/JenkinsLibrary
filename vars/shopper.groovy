@@ -1,5 +1,7 @@
 def test(imageName, testFilePath){
     stage("build docker image"){
+        sh "pwd"
+        sh "ls"
         sh "docker image build --target test -t ${imageName} ."
     }
     
